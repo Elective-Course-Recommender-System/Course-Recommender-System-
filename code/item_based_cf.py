@@ -83,22 +83,20 @@ def similarity(c1, c2, sheet):
     for i in range(1,sheet.max_row):
         if IsScore(sheet,i,c1) and IsScore(sheet,i,c2):
             avg = getAvgGrades(sheet,i)
+            # print(i,avg)
             sum1 = sum1 + (scr_sub(sheet,i,c1) - avg) * (scr_sub(sheet,i,c2) - avg)
             sum2 = sum2 + (scr_sub(sheet,i,c1) - avg) * (scr_sub(sheet,i,c1) - avg)
             sum3 = sum3 + (scr_sub(sheet,i,c2) - avg) * (scr_sub(sheet,i,c2) - avg)
     if sum2!=0 and sum3!=0:
         return round(float(sum1/((sum2*sum3)**(1/2))),3)
     else:
-        # print("hi ",v)
         return 0
 
 
 similar_item_val = []
 simi_item = []
-# print(sheet.max_column,sheet.max_row)
 avgU = getAvgGrades(sheet, studid)
 for i in range(2,sheet.max_column+1):
-    # print(i,sheet.cell(row=i+1,column=1))
         if i!=course:
             sim = similarity(i,course,sheet)
             similar_item_val.append([course,i,sim])

@@ -108,6 +108,7 @@ for i in range(1,sheet.max_row):
 #predicting grade
 sum1 = 0
 sum2 = 0
+print(similar_user_val)
 for i in range(0,len(simi_user)):
     if IsScore(sheet,int(simi_user[i][1]),course):
         avg = getAvgGrades(sheet,simi_user[i][1])
