@@ -1,0 +1,15 @@
+# System Files
+.DS_Store
+Thumbs.db
+*.pyc
+*~
+__pycache__
+myvenv
+venv
+env
+db.sqlite3
+/static
+.idea/
+**/migrations/**
+!**/migrations/__init__.py
+staticfiles/
